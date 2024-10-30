@@ -7,3 +7,15 @@ variable "ami_id" {
   default = "ami-06fc9949c7e49967a"
   description = "RHEL_HA-8.4.0_HVM-20230419-x86_64-41-Hourly2-GP2"
 }
+
+variable "access_key" {
+  type = string
+}
+
+variable "secret_key" {
+  type = string
+}
+
+variable "region" {
+  type = string
+}
