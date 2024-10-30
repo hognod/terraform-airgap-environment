@@ -4,6 +4,11 @@ terraform {
       source = "hashicorp/aws"
       version = "5.73.0"
     }
+
+    github = {
+      source = "integrations/github"
+      version = "6.3.1"
+    }
   }
 }
 
@@ -13,3 +18,7 @@ provider "aws" {
   region = var.region
 }
 
+provider "github" {
+  base_url = var.github_base_url
+  token = var.github_token
+}
