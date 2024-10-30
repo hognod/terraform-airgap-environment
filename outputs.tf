@@ -8,4 +8,5 @@ output "offline_private_ip" {
 
 output "ssh_pem_key" {
   value = local_file.private_key
+  sensitive = true
 }
