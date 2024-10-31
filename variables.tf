@@ -19,19 +19,3 @@ variable "secret_key" {
 variable "region" {
   type = string
 }
-
-variable "github_base_url" {
-  type = string
-}
-
-variable "github_token" {
-  type = string
-}
-
-variable "github_repository" {
-  type = string
-}
-
-variable "github_branch" {
-  type = string
-}

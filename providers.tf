@@ -17,8 +17,3 @@ provider "aws" {
   secret_key = var.secret_key
   region = var.region
 }
-
-provider "github" {
-  base_url = var.github_base_url
-  token = var.github_token
-}

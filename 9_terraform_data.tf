@@ -19,7 +19,7 @@ resource "terraform_data" "public" {
 
   provisioner "remote-exec" {
     inline = [
-      "echo ${tls_private_key.key_pair.private_key_pem} >> /home/ec2-user/offline.pem",
+      "echo '${tls_private_key.key_pair.private_key_pem}' >> /home/ec2-user/offline.pem",
       "chmod 400 /home/ec2-user/offline.pem"
     ]
   }
