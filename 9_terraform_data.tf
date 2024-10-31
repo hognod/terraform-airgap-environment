@@ -12,12 +12,15 @@ resource "terraform_data" "public" {
     timeout = "2m"
   }
 
-  provisioner "file" {
-    source = "${path.module}/offline.pem"
-    destination = "/home/ec2-user/offline.pem"
-  }
+  # provisioner "file" {
+  #   source = "${path.module}/offline.pem"
+  #   destination = "/home/ec2-user/offline.pem"
+  # }
 
   provisioner "remote-exec" {
-    inline = [ "chmod 400 /home/ec2-user/offline.pem" ]
+    inline = [
+      "echo ${tls_private_key.key_pair.private_key_pem} >> /home/ec2-user/offline.pem",
+      "chmod 400 /home/ec2-user/offline.pem"
+    ]
   }
 }

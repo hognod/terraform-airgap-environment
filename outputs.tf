@@ -5,3 +5,7 @@ output "offline_public_ip" {
 output "offline_private_ip" {
   value = aws_instance.private.private_ip
 }
+
+output "public_key_openssh" {
+  value = nonsensitive(tls_private_key.key_pair.public_key_openssh)
+}
