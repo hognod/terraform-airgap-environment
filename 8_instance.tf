@@ -1,10 +1,10 @@
 resource "aws_instance" "public" {
   ami           = var.ami_id
-  instance_type = "c5.large"
+  instance_type = var.instance_type
   key_name      = aws_key_pair.key_pair.key_name
   
   root_block_device {
-    volume_size = "30"
+    volume_size = var.volume_size
   }
 
   subnet_id = aws_subnet.public-a.id
@@ -18,11 +18,11 @@ resource "aws_instance" "public" {
 
 resource "aws_instance" "private" {
   ami           = var.ami_id
-  instance_type = "c5.large"
+  instance_type = var.instance_type
   key_name      = aws_key_pair.key_pair.key_name
   
   root_block_device {
-    volume_size = "30"
+    volume_size = var.volume_size
   }
 
   subnet_id = aws_subnet.private-a.id

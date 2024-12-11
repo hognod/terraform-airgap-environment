@@ -8,6 +8,15 @@ variable "ami_id" {
   description = "RHEL_HA-8.4.0_HVM-20230419-x86_64-41-Hourly2-GP2"
 }
 
+variable "instance_type" {
+  type = string
+}
+
+variable "volume_size" {
+  type = string
+}
+
+
 variable "access_key" {
   type = string
 }
