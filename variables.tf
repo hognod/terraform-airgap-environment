@@ -7,6 +7,15 @@ variable "ami_id" {
   EOT
 }
 
+variable "os_user" {
+  type = string
+  description = <<-EOT
+    ubuntu 20.04 : ubuntu
+    ubuntu 22.04 : ubuntu
+    RHEL_HA-8.4.0_HVM-20230419-x86_64-41-Hourly2-GP2 : ec2-user
+  EOT
+}
+
 variable "instance_type" {
   type = string
 }
@@ -15,7 +24,7 @@ variable "volume_size" {
   type = string
 }
 
-
+//variables sets
 variable "access_key" {
   type = string
 }
