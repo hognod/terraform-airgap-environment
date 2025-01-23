@@ -29,3 +29,18 @@ resource "aws_subnet" "private-a" {
     Name = "offline-private-subnet-a"
   }
 }
+
+
+
+
+
+//
+resource "aws_subnet" "private-a-2" {
+  vpc_id = aws_vpc.main.id
+  cidr_block = cidrsubnet(aws_vpc.main.cidr_block, 8, 20)
+  availability_zone = "ap-northeast-2a"
+
+  tags = {
+    Name = "offline-private-subnet-a-2"
+  }
+}
