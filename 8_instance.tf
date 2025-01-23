@@ -7,9 +7,9 @@ resource "aws_instance" "public" {
     volume_size = var.volume_size
   }
 
-  subnet_id = aws_subnet.public-c.id
+  subnet_id = aws_subnet.public-a.id
   vpc_security_group_ids = [aws_security_group.public.id]
-  private_ip = cidrhost(aws_subnet.public-c.cidr_block, 101)
+  private_ip = cidrhost(aws_subnet.public-a.cidr_block, 101)
 
   tags = {
     Name = "offline-public"
