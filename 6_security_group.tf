@@ -30,6 +30,15 @@ resource "aws_security_group" "public" {
     ]
   }
 
+  ingress {
+    from_port   = 5678
+    to_port     = 5678
+    protocol    = "TCP"
+    cidr_blocks = [
+      "0.0.0.0/0"
+    ]
+  }
+
   egress {
     from_port   = 22
     to_port     = 22
